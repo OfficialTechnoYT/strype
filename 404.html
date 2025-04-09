@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* Page Styling */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #d9d9d9, #ffffff);
+            color: black;
+            text-align: center;
+            padding: 50px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header img {
+            max-width: 1000px;
+            width: 80vw;
+            height: auto;
+            animation: grow-title 1s ease-out forwards;
+        }
+
+        @keyframes grow-title {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Navigation Bar */
+        .nav-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: black;
+            padding: 5px 10px;
+            border-radius: 30px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-container a {
+            font-size: 1.1em;
+            text-decoration: none;
+            padding: 7px 10px;
+            border-radius: 20px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-container .techno {
+            color: rgba(200, 100, 100, 1);
+        }
+
+        .nav-container .codek {
+            color: rgba(75, 75, 175, 1);
+        }
+
+        .nav-container .techno:hover {
+            background: rgba(200, 100, 100, 1);
+            color: white;
+        }
+
+        .nav-container .codek:hover {
+            background: rgba(50, 50, 150, 1);
+            color: white;
+        }
+
+        /* 404 Section */
+        .not-found {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .not-found h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background 0.3s ease, color 0.3s ease;
+            color: black;
+        }
+
+        .home-button:hover {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://github.com/OfficialTechnoYT/strype/blob/main/assets/strype-logo.png?raw=true">
+    </header>
+
+    <div class="nav-container">
+        <a href="./techno" class="techno">Techno</a>
+        <a href="./codek" class="codek">Codek</a>
+    </div>
+
+    <section class="not-found">
+        <h1>404: Page Not Found</h1>
+        <a href="./" class="home-button">Go Back Home</a>
+    </section>
+</body>
+</html>
