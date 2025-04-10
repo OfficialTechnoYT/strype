@@ -7,6 +7,17 @@
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <style>
     	/* Page Styling */
+        html, body {
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+		}
+
+		main {
+    		flex: 1;
+		}
+
+        
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -15,6 +26,8 @@
             line-height: 1.6;
             transition: background-color 0.3s ease;
             position: relative;
+            display: flex;
+    		flex-direction: column;
         }
 
         /* Header */
@@ -218,7 +231,7 @@
     <header>
         <img src="./assets/strype-logo.png">
     </header>
-    
+    <main>
     <div class="nav-container">
         <a href="./techno" class="techno">Techno</a>
         <a href="./codek" class="codek">Codek</a>
@@ -236,6 +249,7 @@
         	</div>
          </div>
     </section>
+    </main>
     <footer class="footer">
     <p>Email: <a href="mailto:techno@thestrype.com">techno@thestrype.com</a></p>
     <p>Phone: <a href="tel:+15159571715">+1 515-957-1715</a></p>
