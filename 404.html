@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>Strype - 404</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         /* Page Styling */
@@ -78,6 +78,17 @@
             transition: background 0.3s ease, color 0.3s ease;
         }
 
+	.nav-separator {
+		width: 1px;
+		height: 20px;
+		background-color: white;
+		opacity: 0.5;
+	}
+
+	.nav-container .home {
+		color: white;
+	}
+
         .nav-container .techno {
             color: rgba(200, 100, 100, 1);
         }
@@ -89,6 +100,15 @@
         .nav-container .productions {
             color: white;
         }
+
+	.nav-container .domore {
+		color: white;
+	}
+
+	.nav-container .home:hover {
+		background: white;
+		color: black;
+	}
 
         .nav-container .techno:hover {
             background: rgba(200, 100, 100, 1);
@@ -104,6 +124,11 @@
             background: white;
             color: black;
         }
+
+	.nav-container .domore:hover {
+		background: white;
+		color: black;
+	}
 
         /* 404 Section */
         .not-found {
@@ -162,9 +187,12 @@
     </header>
 <main>
     <div class="nav-container">
+	<a href="./" class="home">Home</a>
         <a href="https://techno.thestrype.com" class="techno">Techno</a>
-        <a href="./codek" class="codek">Codek</a>
-        <a href="./productions" class="productions">Productions</a>
+        <a href="/codek" class="codek">Codek</a>
+        <a href="/productions" class="productions">Productions</a>
+	<div class="nav-separator"></div>
+	<a href="https://domore.thestrype.com" class="domore">DoMore</a>
     </div>
 
     <section class="not-found">
