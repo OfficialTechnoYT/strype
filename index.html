@@ -81,38 +81,107 @@
             transition: background 0.3s ease, color 0.3s ease;
         }
 
-	.nav-container .home {
+	.sidebar-toggle {
+		position: fixed;
+		top: 15px;
+		right: 15px;
+		background: black;
+		color: white;
+		border: none;
+		padding: 12px 14px;
+		border-radius: 50%;
+		z-index: 201;
+		font-size: 1.5em;
+		cursor: pointer;
+		transition: background 0.3s;
+		display: none;
+	}
+
+	.sidebar-toggle:hover {
+		background: #333;
+	}
+
+	.sidebar-nav {
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 240px;
+		background: black;
+		box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+		padding: 60px 15px 0 15px;
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		z-index: 200;
+		transform: translateX(100%);
+		transition: transform 0.3s cubic, bezier(.68, -0.55, .27, 1.55);
+	}
+
+	.sidebar-nav.open {
+		transform: translateX(0);
+	}
+
+	.sidebar-nav a {
+		font-size: 1.1em;
+		text-decoration: none;
+		padding: 10px 15px;
+		border-radius: 20px;
+		transition: background 0.3s, color 0.3s;
+		margin: 0 0 8px 0;
+	}
+
+	@media (max-wdith: 428.95px) {
+		.nav-container {
+			display: none !important;
+		}
+
+		.sidebar-toggle,
+		.sidebar-nav {
+			display: block;
+		}
+	}
+
+	.nav-container .home,
+	.sidebar-nav .home {
 		color: white;
 	}
         
-        .nav-container .techno {
+        .nav-container .techno,
+	.sidebar-nav .techno {
         	color: rgba(200, 100, 100, 1);
         }
 
-    	.nav-container .productions {
+    	.nav-container .productions,
+	.sidebar-nav .productions {
     		color: white;
     	}
 
-	.nav-container .domore {
+	.nav-container .domore,
+	.sidebar-nav .domore {
 		color: white;
 	}
 
-	.nav-container .home:hover {
+	.nav-container .home:hover,
+	.sidebar-nav .home:hover {
 		background: white;
 		color: black;
 	}
         
-        .nav-container .techno:hover {
+        .nav-container .techno:hover,
+	.sidebar-nav .techno:hover {
         	background: rgba(200, 100, 100, 1);
-            color: white;
+            	color: white;
         }
 
-    	.nav-container .productions:hover {
+    	.nav-container .productions:hover,
+	.sidebar-nav .productions:hover {
     		background: white;
     		color: black;
     	}
 
-	.nav-container .domore:hover {
+	.nav-container .domore:hover,
+	.sidebar-nav .domore:hover {
 		background: white;
 		color: black;
 	}
@@ -287,10 +356,44 @@
         
     </style>
 </head>
+<script>
+const sidebar = document.querySelector('.sidebar-nav');
+const toggleBtn = document.querySelector('.sidebar-toggle');
+
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('open');
+  document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+});
+
+sidebar.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (
+    sidebar.classList.contains('open') &&
+    !sidebar.contains(e.target) &&
+    e.target !== toggleBtn
+  ) {
+    sidebar.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+</script>
 <body>
     <header>
         <img src="/assets/strype-logo.png">
     </header>
+    <button class="sidebar-toggle" aria-label="Open navigation">&#9776;</button>
+    <nav class="sidebar-nav">
+	<a href="" class="home">Home</a>
+        <a href="https://techno.thestrype.com" class="techno">Techno</a>
+    	<a href="https://productions.thestrype.com" class="productions">Productions</a>
+	<a href="https://domore.thestrype.com" class="domore">DoMore</a>
+    </nav>
     <main>
     <div class="nav-container">
 	<a href="" class="home">Home</a>
