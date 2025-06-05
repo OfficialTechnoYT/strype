@@ -298,6 +298,24 @@
         	background: rgba(0, 0, 0, 1);
             color: white;
 		}
+
+	    /* Disable Hover */
+	    @media (hover: none) and (pointer: coarse) {
+		    .nav-container a,
+		    .video-title a,
+		    .footer a {
+			    transition: none;
+		    }
+
+		    .nav-container .home:hover,
+		    .nav-container .techno:hover,
+		    .nav-container .productions:hover,
+		    .nav-container .domore:hover,
+		    .video-title a:hover,
+		    .fotor a:hover {
+			    all: unset;
+		    }
+	    }
         
     </style>
 </head>
