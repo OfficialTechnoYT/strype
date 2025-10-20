@@ -60,70 +60,12 @@
             }
         }
 
-        /* Navigation Bar */
-        .nav-container {
-        	position: fixed;
-            top: 10px;
-            right: 10px;
-            background: black;
-            padding: 5px 10px;
-            border-radius: 30px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .nav-container a {
-            font-size: 1.1em;
-            text-decoration: none;
-            padding: 7px 10px;
-            border-radius: 20px;
-            transition: background 0.3s ease, color 0.3s ease;
-	}
-
-	.nav-container .home {
-		color: white;
-	}
-        
-        .nav-container .techno {
-        	color: rgba(200, 100, 100, 1);
-        }
-
-    	.nav-container .productions {
-    		color: white;
-    	}
-
-	.nav-container .domore {
-		color: white;
-	}
-
-	.nav-container .home:hover {
-		background: white;
-		color: black;
-	}
-        
-        .nav-container .techno:hover {
-        	background: rgba(200, 100, 100, 1);
-            color: white;
-        }
-
-    	.nav-container .productions:hover {
-    		background: white;
-    		color: black;
-    	}
-
-	.nav-container .domore:hover {
-		background: white;
-		color: black;
-	}
-
 	/* Hamburger Menu */
 	#menu,
 	#menuToggle {
  		display: none;
 	}
 
-	@media (max-width: 439px) {
   		.nav-container {
     	display: none;
   	}
@@ -144,8 +86,40 @@
     	transition: color 0.3s ease;
   	}
 
-  #menuToggle a:hover {
+  #strype a,
+  #techno a,
+  #productions a {
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  #strype a {
+    color: black;
+  }
+
+  #techno a {
     color: tomato;
+  }
+
+  #productions a {
+    color: black;
+  }
+
+  #strype a:hover {
+    background: black;
+    color: white;
+  }
+
+  #techno a:hover {
+    background: tomato;
+    color: white;
+  }
+
+  #productions a:hover {
+    background: black;
+    color: white;
   }
 
   #menuToggle input {
@@ -230,7 +204,6 @@
   #menuToggle input:checked ~ ul {
     transform: none;
   }
-}
 
         
         /* Sections */
@@ -413,22 +386,14 @@
     <span></span>
     
     <ul id="menu">
-      <li>
-        <a href="#">
-          <label for="menuCheckbox" onclick="this.parentNode.click();">Home</label>
-        </a>
+      <li id="strype">
+        <a href="">Strype</a>
       </li>
-      <li>
-        <a href="#about">
-          <label for="menuCheckbox" onclick="this.parentNode.click();">About</label>
-        </a>
+      <li id="techno">
+        <a href="https://techno.thestrype.com">Techno</a>
       </li>
-      
-      <li><label for="menuCheckbox"><a>Info</a></label></li>
-      <li><label for="menuCheckbox"><a>Contact</a></label></li>
-      
-      <li>
-        <a href="https://erikterwan.com/" target="_blank">Show me more</a>
+      <li id="productions">
+        <a href="https://productions.thestrype.com">Strype Productions</a>
       </li>
     </ul>
   </div>
@@ -437,13 +402,6 @@
         <img src="/assets/strype-logo.png">
     </header>
     <main>
-    <div class="nav-container">
-	<a href="" class="home">Home</a>
-        <a href="https://techno.thestrype.com" class="techno">Techno</a>
-    	<a href="https://productions.thestrype.com" class="productions">Productions</a>
-	<a href="https://domore.thestrype.com" class="domore">DoMore</a>
-    </div>
-    
     <section id="section2" class="section">
         <h2>Featuring Techno</h2>
         <div class="video-wrapper">
